@@ -1,0 +1,36 @@
+#TOMCAT ISNTALLATIONS
+
+Update repo
+>> sudo apt update -y
+
+install tomcat10
+>> sudo apt install tomcat10 -y
+
+install tomcat10-admin
+>> sudo apt install tomcat10-admin  -y
+>> sudo apt update -y
+>> sudo systemctl restart tomcat10
+
+EDIT Users-xml file
+>> sudo nano /etc/tomcat10/tomcat-users.xml
+	addd==> <user username="admin" password="admin" roles="manager-gui, 	manager-script,manager-status"/>
+>> sudo systemctl restart tomcat10
+
+#JENKINS ISNTALLATIONS
+
+Update repo
+>> sudo apt update -y
+>> sudo apt install fontconfig openjdk-21-jre
+>> java -version
+>>  sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+>> sudo apt update
+>> sudo apt install Jenkins
+>> systemctl start Jenkins
+>> systemctl enable Jenkins
+>> systemctl status Jenkins
+
+>> cat /var/lib/jenkins/secrets/initialAdminPassword

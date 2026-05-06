@@ -1,0 +1,10 @@
+git init
+git add .
+git clone _url_
+git status
+git branch
+git commit -m "added files"
+git push origin main(*branchname) _url_
+git config --global user.email "-----@gmail.com"
+git config --global user.name "--name--"
+
